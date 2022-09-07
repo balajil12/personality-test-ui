@@ -1,0 +1,18 @@
+<div
+  class="test-list__container"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutGap="20px"
+  fxLayoutAlign="center"
+  *ngIf="$testList | async as testList"
+>
+  <div *ngFor="let test of testList" class="test__item" fxFlex="30" >
+    <mat-card>
+      <mat-card-title>{{test.name}}</mat-card-title>
+      <mat-card-subtitle>{{test.description}}</mat-card-subtitle>
+      <mat-card-actions class="test__action-menu">
+        <a mat-button>Take a test</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
