@@ -1,0 +1,20 @@
+<div *ngIf="$result | async as result" class="test-result__container">
+ 
+    <div>
+        <span class="pt__title">
+            Result: 
+        </span>
+    </div>
+
+  <div class="result__conclusion primary">
+    <span>
+      {{ result.conclusion }}
+    </span>
+  </div>
+
+  <div class="result__description primary">
+    <p>
+      {{ result.description }}
+    </p>
+  </div>
+</div>
