@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then(q=> q.TestModule),
   }
 ];
 

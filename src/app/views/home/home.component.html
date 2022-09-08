@@ -11,7 +11,7 @@
       <mat-card-title>{{test.name}}</mat-card-title>
       <mat-card-subtitle>{{test.description}}</mat-card-subtitle>
       <mat-card-actions class="test__action-menu">
-        <a mat-button>Take a test</a>
+        <a [routerLink]="['test', test.id]" mat-button>Take a test</a>
       </mat-card-actions>
     </mat-card>
   </div>

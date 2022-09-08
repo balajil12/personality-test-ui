@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { PsyTest } from '../interfaces/PsyTest.interface';
+import { PsyTest, PsyTestWithQuestion } from '../interfaces/PsyTest.interface';
 import { switchMap, tap } from 'rxjs/operators'
 
 @Injectable({
@@ -12,6 +12,8 @@ export class TestService {
 
   private basePath: string = `${environment.apiUrl}/test`
   private testList!: BehaviorSubject<PsyTest[]>;
+
+  private test!: BehaviorSubject<PsyTest>;
 
   constructor(private readonly http: HttpClient) { }
 
@@ -25,5 +27,9 @@ export class TestService {
         tap((results: PsyTest[]) => (this.testList = new BehaviorSubject<PsyTest[]>(results))),
         switchMap(() => this.testList.asObservable())
       );
+  }
+
+  getById(id: number): Observable<PsyTestWithQuestion> {
+    return this.http.get<PsyTestWithQuestion>(`${this.basePath}/${id}`)
   }
 }
