@@ -7,8 +7,3 @@
     text-align: center;
     display: block;
 }
-
-.test__action button {
-    min-width: 100px;
-    margin-right: 10px;
-}

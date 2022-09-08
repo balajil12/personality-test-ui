@@ -1,0 +1,11 @@
+
+.result__conclusion {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result__description {
+    font-weight: bold;
+    text-align: justify;
+}

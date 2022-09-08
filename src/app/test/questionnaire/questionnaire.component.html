@@ -1,0 +1,44 @@
+<ng-container *ngIf="test">
+  <div class="question__container">
+    <div class="question__viewer">
+      <app-question
+        [question]="activeQuestion"
+        [index]="activeIndex"
+        [selectedId]="answers[activeIndex]"
+        (selectedOption)="storeSelections($event)"
+      ></app-question>
+    </div>
+  </div>
+
+  <div class="questionnaire__action">
+    <button
+      [disabled]="!isPreviousButtonActive"
+      mat-raised-button
+      (click)="previous()"
+    >
+      <mat-icon>navigate_before</mat-icon>
+      Previous
+    </button>
+    <button
+      [disabled]="!isNextButtonActive"
+      mat-raised-button
+      color="primary"
+      (click)="next()"
+    >
+      Next
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <a
+      *ngIf="answersCount === test.questions.length"
+      routerLink="result"
+      [queryParams]="{ a: answerValues }"
+      mat-raised-button
+      color="primary"
+    >
+      Show Results
+    </a>
+    <span>
+      {{ answersCount }}/{{ test.questions.length }} questions answered.
+    </span>
+  </div>
+</ng-container>
