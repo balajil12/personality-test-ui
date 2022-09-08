@@ -5,8 +5,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,9 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     FlexLayoutModule,
     RouterModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     NavBarComponent,
@@ -28,6 +33,9 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     MatIconModule,
     RouterModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

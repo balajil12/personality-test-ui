@@ -1,0 +1,9 @@
+.question__text {
+    font-size: 1.3em;
+    padding: 5px;
+}
+
+.question__option {
+    padding: 5px;
+    margin: 10px;
+}

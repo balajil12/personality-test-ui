@@ -1,0 +1,50 @@
+<div
+  class="test__container"
+  fxLayout="column"
+  fxLayoutGap="30px"
+  fxLayoutAlign="center"
+  *ngIf="test?.questions?.length"
+>
+  <div class="test__detail">
+    <span class="pt__title primary">
+      {{ test.name }}
+    </span>
+    <span class="pt__subtitle primary">
+      {{ test.description }}
+    </span>
+  </div>
+
+  <div class="question__container">
+    <div class="question__viewer">
+      <app-question
+        [question]="activeQuestion"
+        [index]="activeIndex"
+        [selectedId]="answers[activeIndex]"
+        (selectedOption)="storeSelections($event)"
+      ></app-question>
+    </div>
+  </div>
+
+  <div class="test__action">
+    <button
+      [disabled]="!isPreviousButtonActive"
+      mat-raised-button
+      (click)="previous()"
+    >
+      <mat-icon>navigate_before</mat-icon>
+      Previous
+    </button>
+    <button
+      [disabled]="!isNextButtonActive"
+      mat-raised-button
+      color="primary"
+      (click)="next()"
+    >
+      Next
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <span>
+        {{answersCount}} / {{test.questions.length}} questions answered.
+    </span>
+  </div>
+</div>

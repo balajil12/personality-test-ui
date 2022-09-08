@@ -1,0 +1,15 @@
+<div class="question__container">
+  <div class="question__text">
+    <label>{{index+1}}. {{ question.question }}</label>
+  </div>
+
+  <div class="question__options">
+    <mat-radio-group (change)="selectionChanged($event)" >
+      <div class="question__option" *ngFor="let option of question.options">
+        <mat-radio-button [value]="option.id" [checked]="selectedId === option.id" >{{
+          option.option
+        }}</mat-radio-button>
+      </div>
+    </mat-radio-group>
+  </div>
+</div>

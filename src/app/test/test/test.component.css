@@ -1,0 +1,14 @@
+.test__container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.test__detail span {
+    text-align: center;
+    display: block;
+}
+
+.test__action button {
+    min-width: 100px;
+    margin-right: 10px;
+}
