@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { MatRadioChange } from '@angular/material/radio';
 import { Question } from '../../core/interfaces/question.interface';
 

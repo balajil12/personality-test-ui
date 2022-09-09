@@ -20,7 +20,6 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.parent?.snapshot.paramMap.get('id');
 
-    console.log(id)
     if (id) {
       this.route.queryParams
         .pipe(untilDestroyed(this))

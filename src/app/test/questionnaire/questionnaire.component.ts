@@ -32,6 +32,10 @@ export class QuestionnaireComponent implements OnInit {
     return this.activeIndex < (this.test.questions.length - 1);
   }
 
+  get answerValues(): number[] {
+    return Object.values(this.answers);
+  }
+
   get answersCount(): number {
     return Object.keys(this.answers).length
   }
@@ -47,8 +51,6 @@ export class QuestionnaireComponent implements OnInit {
       this.testService.getById(+id).subscribe((test) => {
         this.test = test;
       });
-    } else {
-      void this.router.navigate(['/']);
     }
   }
 
@@ -62,9 +64,5 @@ export class QuestionnaireComponent implements OnInit {
 
   storeSelections(value: number): void {
     this.answers[this.activeIndex] = value;
-  }
-
-  get answerValues(): number[] {
-    return Object.values(this.answers);
   }
 }
